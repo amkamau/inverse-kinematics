@@ -1,0 +1,10 @@
+# Default to LF for text files
+* text=auto eol=lf
+
+# Python and ROS robot description files
+*.py      text eol=lf
+*.xml     text eol=lf
+*.xacro   text eol=lf
+*.yaml    text eol=lf
+*.rviz    text eol=lf
+*.sh      text eol=lf

@@ -67,12 +67,12 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
+        base2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        gripper_link:
+        base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -83,21 +83,6 @@ Visualization Manager:
           Show Trail: false
           Value: true
         link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wrist_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -156,25 +141,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.537846803665161
+      Distance: 1.1263995170593262
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0035285926423966885
-        Y: 0.0046640075743198395
-        Z: 0.008108586072921753
+        X: 0.03351506218314171
+        Y: 0.04743245989084244
+        Z: 0.09399877488613129
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.665398120880127
+      Pitch: 0.3853984475135803
       Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 5.3035783767700195
+      Yaw: 2.753577470779419
     Saved: ~
 Window Geometry:
   Displays:
@@ -192,5 +177,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1588
-  X: 0
-  Y: 0
+  X: -32
+  Y: -32
