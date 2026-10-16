@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 from glob import glob
 import os
 
-package_name = 'six_dof_arm'
+package_name = 'five_dof_arm'
 
 setup(
     name=package_name,

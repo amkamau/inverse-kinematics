@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="six_dof_arm">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="five_dof_arm">
 
   <!-- Dimensions are illustrative, in metres. -->
   <xacro:property name="base_height" value="0.08"/>
@@ -13,7 +13,7 @@
     <visual>
       <origin xyz="-0.077 -0.070 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://six_dof_arm/meshes/Base1.STL"
+        <mesh filename="package://five_dof_arm/meshes/Base1.STL"
               scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
@@ -22,20 +22,20 @@
   <!-- Joint 1: rotating base -->
   <link name="base2_link">
     <visual>
-      <origin xyz="-0.06 -0.06 0.003" rpy="0 0 0"/>
+      <origin xyz="-0.06 -0.06 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://six_dof_arm/meshes/Base2.STL"
+        <mesh filename="package://five_dof_arm/meshes/Base2.STL"
               scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="base2_blue">
         <color rgba="0.15 0.35 0.8 1.0"/>
-    </material>
+      </material>
     </visual>
   </link>
   <joint name="joint1" type="revolute">
     <parent link="base_link"/>
     <child link="base2_link"/>
-    <origin xyz="0 0 0.035" rpy="0 0 0"/>
+    <origin xyz="0 0 0.037" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit lower="-3.14159" upper="3.14159"
           effort="10" velocity="1.0"/>
@@ -47,7 +47,7 @@
     <visual>
       <origin xyz="-0.013 -0.022 -0.008" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://six_dof_arm/meshes/Link1.STL"
+        <mesh filename="package://five_dof_arm/meshes/Link1.STL"
               scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
@@ -55,7 +55,7 @@
   <joint name="joint2" type="revolute">
     <parent link="base2_link"/>
     <child link="link1"/>
-    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+    <origin xyz="0 0 0.028" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit lower="-1.5708" upper="1.5708"
           effort="10" velocity="1.0"/>
@@ -66,25 +66,66 @@
   <!-- Joint 3: second arm -->
   <link name="link2">
     <visual>
-      <origin xyz="-0.0148 -0.0145 -0.009" rpy="0 0 0"/>
+      <origin xyz="-0.0148 -0.0145 -0.008" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://six_dof_arm/meshes/Link2.STL"
+        <mesh filename="package://five_dof_arm/meshes/Link2.STL"
               scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="base2_blue">
         <color rgba="0.15 0.35 0.8 1.0"/>
       </material>
-
     </visual>
   </link>
-
   <joint name="joint3" type="revolute">
     <parent link="link1"/>
     <child link="link2"/>
+    <origin xyz="0 0 0.101" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.0" upper="2.0"
+          effort="8" velocity="1.0"/>
+  </joint>
+
+  
+  <!-- Joint 4: second arm -->
+  <link name="link3">
+    <visual>
+      <origin xyz="-0.014 -0.016 -0.008" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://five_dof_arm/meshes/Link3.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="joint4" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
     <origin xyz="0 0 0.095" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit lower="-2.0" upper="2.0"
           effort="8" velocity="1.0"/>
+  </joint>
+
+
+  <!-- Joint 5: End point -->
+  <link name="link4">
+    <visual>
+      <origin xyz="-0.0135 -0.0135 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://five_dof_arm/meshes/Link4.STL"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="base2_blue">
+        <color rgba="0.15 0.35 0.8 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="joint5" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0.068" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159"
+          effort="10" velocity="1.0"/>
   </joint>
 
 

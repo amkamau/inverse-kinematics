@@ -8,7 +8,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     xacro_file = PathJoinSubstitution([
-        FindPackageShare('six_dof_arm'),
+        FindPackageShare('five_dof_arm'),
         'urdf',
         'arm.urdf.xacro',
     ])
