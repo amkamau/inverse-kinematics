@@ -27,6 +27,18 @@ def generate_launch_description():
             parameters=[{'robot_description': robot_description}],
         ),
         Node(
+            package='five_dof_arm',
+            executable='xarm_state',
+            name='xarm_state',
+            output='screen',
+        ),
+        Node(
+            package='five_dof_arm',
+            executable='servo_to_joint_state',
+            name='servo_to_joint_state',
+            output='screen',
+        ),
+        Node(
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
             name='joint_state_publisher_gui',
@@ -39,4 +51,5 @@ def generate_launch_description():
             name='rviz2',
             output='screen',
         ),
+
     ])

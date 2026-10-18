@@ -23,14 +23,22 @@ setup(
         (os.path.join('share', package_name, 'meshes'),
             glob('meshes/*')),
     ],
-    install_requires=['setuptools'],
+    install_requires=[
+        'setuptools',
+        'hidapi==0.15.0',
+    ],
     zip_safe=True,
     maintainer='user',
-    maintainer_email='user@example.com',
+    maintainer_email='amkamau@proton.me',
     description='6-DOF robotic arm model, kinematics, and control',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [],
+        'console_scripts': [
+            'servo_to_joint_state = five_dof_arm.servo_to_joint_state_node:main',
+            'xarm_state = five_dof_arm.xarm_state_node:main',
+            'xarm_command = five_dof_arm.xarm_command_node:main',
+        ],
+
     },
 )
