@@ -27,12 +27,16 @@ class XArmStateNode(Node):
                 self.arm.getPosition(i, degrees=False)
                 for i in range(1, 7)
             ]
+            self.arm.servoOff()
+            # self.get_logger().info(f'Servo positions: {positions}')
 
             msg = Int32MultiArray()
             msg.data = [int(p) for p in positions]
             self.positions_pub.publish(msg)
 
             voltage = float(self.arm.getBatteryVoltage())
+            # self.get_logger().info(f'Battery voltage: {voltage} V')
+
             voltage_msg = Float32()
             voltage_msg.data = voltage
             self.voltage_pub.publish(voltage_msg)

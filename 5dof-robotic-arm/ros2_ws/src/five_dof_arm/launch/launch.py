@@ -4,6 +4,7 @@ from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from launch.actions import DeclareLaunchArgument
 
 
 def generate_launch_description():
@@ -18,6 +19,11 @@ def generate_launch_description():
         value_type=str
     )
 
+    VENV_PYTHON = (
+        '/home/vint/Desktop/Projects/inverse-kinematics/'
+        '5dof-robotic-arm/.venv/bin/python'
+    )
+
     return LaunchDescription([
         Node(
             package='robot_state_publisher',
@@ -30,21 +36,23 @@ def generate_launch_description():
             package='five_dof_arm',
             executable='xarm_state',
             name='xarm_state',
+            prefix=VENV_PYTHON,
             output='screen',
         ),
         Node(
             package='five_dof_arm',
             executable='servo_to_joint_state',
             name='servo_to_joint_state',
+            prefix=VENV_PYTHON,
             output='screen',
         ),
-        Node(
-            package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui',
-            name='joint_state_publisher_gui',
-            output='screen',
-            parameters=[{'robot_description': robot_description}],
-        ),
+        # Node(
+        #     package='joint_state_publisher_gui',
+        #     executable='joint_state_publisher_gui',
+        #     name='joint_state_publisher_gui',
+        #     output='screen',
+        #     parameters=[{'robot_description': robot_description}],
+        # ),
         Node(
             package='rviz2',
             executable='rviz2',
