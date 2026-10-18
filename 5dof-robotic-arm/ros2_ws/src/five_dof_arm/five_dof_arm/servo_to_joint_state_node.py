@@ -87,8 +87,11 @@ class ServoToJointStateNode(Node):
 
         positions = []
 
+        servo_indices = [5, 4, 3, 2, 1]
+            #     for i in range(5):
+            # raw = float(msg.data[i])
         for i in range(5):
-            raw = float(msg.data[i])
+            raw = float(msg.data[servo_indices[i]])
 
             # Clamp to the configured calibration range.
             raw = max(self.raw_min[i], min(self.raw_max[i], raw))
