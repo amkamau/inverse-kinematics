@@ -1,5 +1,7 @@
 # 5-DOF Robotic Arm — Setup
 
+![Robot Arm](assets/image0.jpeg)
+
 ## Prerequisites
 
 - Ubuntu with ROS 2 Jazzy installed
