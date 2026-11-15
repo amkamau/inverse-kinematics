@@ -1,27 +1,128 @@
-# ROS 2 / Colcon build files
-build/
-install/
-log/
 
-# Python
+# ============================================================
+# OPERATING SYSTEM FILES
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================
+# Python temporary files
+# ============================================================
 __pycache__/
 *.py[cod]
 *.egg-info/
 *.egg
+*.Identifier
 
-# Virtual environments
-.venv/
-venv/
 
-# IDE
+# ============================================================
+# IDEs / EDITORS
+# ============================================================
+
+# VS Code
 .vscode/
+
+# JetBrains
 .idea/
+*.iml
 
-# OS files
-.DS_Store
-Thumbs.db
+# Eclipse
+.project
+.classpath
+.settings/
 
-# Temporary files
+# NetBeans
+.nbproject/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim / Emacs
 *.swp
 *.swo
+*.swn
 *~
+.#*
+\#*\#
+
+# ============================================================
+# TEMPORARY FILES
+# ============================================================
+
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+*.log
+*.pid
+*.seed
+*.stackdump
+*.cache
+
+# ============================================================
+# ENVIRONMENT VARIABLES / SECRETS
+# ============================================================
+
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local credentials
+credentials/
+secrets/
+
+# ============================================================
+# GENERAL CACHE / LOCAL DATA
+# ============================================================
+
+.cache/
+.temp/
+.local/
+*.local
+
+# ============================================================
+# CRASH REPORTS
+# ============================================================
+
+core
+core.*
+hs_err_pid*
+*.crash
+
+# ============================================================
+# BACKUP FILES
+# ============================================================
+
+*.backup
+*.back
+*.orig.*
+

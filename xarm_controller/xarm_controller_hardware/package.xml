@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+
+  <name>xarm_controller_hardware</name>
+  <version>0.0.1</version>
+
+  <description>
+    ros2_control hardware interface for the XArm robot.
+  </description>
+
+  <maintainer email="amkamau@proton.me">
+    Package Maintainer
+  </maintainer>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>hardware_interface</depend>
+  <depend>pluginlib</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>
